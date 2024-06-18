@@ -1,0 +1,49 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+// Create a variable to hold your NFTs
+let nftCollection = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata,
+// and store it in the variable above.
+function mintNFT(name, artist, description, dateCreated) {
+    const nft = {
+        name: name,
+        artist: artist,
+        description: description,
+        dateCreated: dateCreated
+    };
+    nftCollection.push(nft);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    nftCollection.forEach((nft, index) => {
+        console.log(`NFT ${index + 1}:`);
+        console.log(`Name: ${nft.name}`);
+        console.log(`Artist: ${nft.artist}`);
+        console.log(`Description: ${nft.description}`);
+        console.log(`Date Created: ${nft.dateCreated}`);
+        console.log('---------------------');
+    });
+}
+
+// Function to return the number of NFTs created
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+// Call your functions below this line
+
+// Example usage:
+mintNFT("Sunset Overdrive", "Alice Smith", "A beautiful sunset over the mountains.", "2023-06-01");
+mintNFT("Ocean Bliss", "Bob Johnson", "A calm ocean scene with a colorful sky.", "2023-06-02");
+
+// List all NFTs
+listNFTs();
+
+// Get total supply of NFTs and print to the console
+console.log("Total Supply: " + getTotalSupply());
+
+console.log("Try programiz.pro");
